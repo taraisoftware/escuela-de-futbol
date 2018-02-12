@@ -1,14 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\tablenoticiasSearch */
+/* @var $searchModel app\models\tablebannersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = 'noticias';
+$this->title = 'banner';
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -16,13 +16,13 @@ $search = "$('.search-button').click(function(){
 });";
 $this->registerJs($search);
 ?>
-<div class="tablenoticias-index">
+<div class="tablebanners-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear noticia', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Agregar banners', ['create'], ['class' => 'btn btn-success']) ?>
        
     </p>
     <div class="search-form" style="display:none">
@@ -32,10 +32,7 @@ $this->registerJs($search);
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-        'titulo',
         'imagen',
-        'descripcion',
-        'detalles:ntext',
         [
             'class' => 'yii\grid\ActionColumn',
         ],
@@ -46,7 +43,7 @@ $this->registerJs($search);
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-tablenoticias']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-tablebanners']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),

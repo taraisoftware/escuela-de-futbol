@@ -1,14 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\tablenoticiasSearch */
+/* @var $searchModel app\models\tablegaleriasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = 'noticias';
+$this->title = 'Galeria';
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -16,13 +16,13 @@ $search = "$('.search-button').click(function(){
 });";
 $this->registerJs($search);
 ?>
-<div class="tablenoticias-index">
+<div class="tablegalerias-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear noticia', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Agregar a galeria', ['create'], ['class' => 'btn btn-success']) ?>
        
     </p>
     <div class="search-form" style="display:none">
@@ -32,21 +32,20 @@ $this->registerJs($search);
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-        'titulo',
-        'imagen',
-        'descripcion',
-        'detalles:ntext',
+       'imagen', 
+      
         [
             'class' => 'yii\grid\ActionColumn',
         ],
     ]; 
+   
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumn,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-tablenoticias']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-tablegalerias']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),

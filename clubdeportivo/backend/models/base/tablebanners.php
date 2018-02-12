@@ -8,12 +8,10 @@ use yii\behaviors\BlameableBehavior;
 use mootensai\behaviors\UUIDBehavior;
 
 /**
- * This is the base model class for table "table_noticias".
+ * This is the base model class for table "table_banners".
  *
  * @property integer $id
- * @property string $titulo
  * @property string $imagen
- * @property string $detalles
  * @property integer $created_by
  * @property string $created_at
  * @property integer $updated_by
@@ -21,7 +19,7 @@ use mootensai\behaviors\UUIDBehavior;
  * @property integer $deleted_by
  * @property string $deleted_at
  */
-class tablenoticias extends \yii\db\ActiveRecord
+class tablebanners extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
@@ -57,11 +55,10 @@ class tablenoticias extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titulo', 'imagen', 'detalles',], 'required'],
-            [['detalles'], 'string'],
+            [['imagen',], 'required'],
             [['created_by', 'updated_by', 'deleted_by'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['titulo', 'imagen', 'descripcion'], 'string', 'max' => 200]
+            [['imagen'], 'string', 'max' => 200]
         ];
     }
 
@@ -70,7 +67,7 @@ class tablenoticias extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'table_noticias';
+        return 'table_banners';
     }
 
     /**
@@ -80,10 +77,7 @@ class tablenoticias extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'titulo' => 'Titulo',
             'imagen' => 'Imagen',
-            'detalles' => 'Detalles',
-            'descripcion' => 'Descripcion',
         ];
     }
 
@@ -136,11 +130,11 @@ class tablenoticias extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return \app\models\tablenoticiasQuery the active query used by this AR class.
+     * @return \app\models\tablebannersQuery the active query used by this AR class.
      */
     public static function find()
     {
-        $query = new \backend\models\tablenoticiasQuery(get_called_class());
-        return $query->where(['table_noticias.deleted_by' => 0]);
+        $query = new \backend\models\tablebannersQuery(get_called_class());
+        return $query->where(['table_banners.deleted_by' => 0]);
     }
 }

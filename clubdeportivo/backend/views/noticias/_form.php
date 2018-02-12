@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\widgets\FileInput;
 /* @var $this yii\web\View */
 /* @var $model app\models\tablenoticias */
 /* @var $form yii\widgets\ActiveForm */
@@ -19,7 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'titulo')->textInput(['maxlength' => true, 'placeholder' => 'Titulo']) ?>
 
-    <?= '<label>imagen</label>'.'<input name="image" type="file" />.' ?>
+    <?= '<label for="image">Imagen</label>'.FileInput::widget([
+        'name' => 'image', 
+        'options' => ['multiple' => false], 
+        'pluginOptions' => ['previewFileType' => 'any']
+    ]); ?>
+    <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true, 'placeholder' => 'Descripcion']) ?>
+
     <?= $form->field($model, 'detalles')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

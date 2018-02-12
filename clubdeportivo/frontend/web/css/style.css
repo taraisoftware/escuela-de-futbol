@@ -884,7 +884,7 @@ footer{
     outline: none;
     padding: .5em;
     font-size: .9em;
-    color: #999999;
+    color: #646363;
     border: solid 1px #FFFFFF;
 }
 .footer-left button.btn1 {
@@ -1899,7 +1899,7 @@ ul.pagination {
 .mail-grid-left h3 {
 	font-size: 2em;
     margin: 0 0 .5em 0;
-    color: #F44336;
+    color: rgb(66, 158, 23);
     font-family: 'Raleway', sans-serif;
 }
 .mail-grid-left h5 {
@@ -1920,7 +1920,7 @@ ul.pagination {
     margin: .5em 0;
 }
 .mail-grid-left p {
-    color: #BBBBBB;
+    color: rgb(117, 116, 116);
     font-size: .875em;
     margin: 1em 0;
     line-height: 1.8em;
@@ -1937,7 +1937,7 @@ ul.pagination {
 }
 .contact-form input[type="text"],.contact-form input[type="email"] {
   width: 100%;
-  color: #919191;
+  color: #686767;
   background: none;
   outline: none;
   font-size: .9em;
@@ -1961,14 +1961,14 @@ ul.pagination {
 .contact-form input[type="submit"] {
     outline: none;
     -webkit-appearance: none;
-    border: solid 1px #F44336;
+    border: solid 1px rgb(16, 150, 22);
     font-size: .875em;
     color: #ffffff;
     font-weight: 600;
     padding: .7em 1em;
     text-decoration: none;
     letter-spacing: 1px;
-    background: #F44336;
+    background: rgb(16, 150, 22);
     margin: 1em 0 0;
 	transition: .5s all;
     -webkit-transition: .5s all;

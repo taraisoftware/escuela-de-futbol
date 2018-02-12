@@ -86,7 +86,7 @@ $this->registerJs($icon);
 									<li><a href="<?=Url::to(['site/conocenos']); ?>">Quienes somos</a></li>
 									
 									<li><a href="<?=Url::to(['site/convenios']); ?>">Convenios</a></li>
-									<li><a href="blog.html" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Escuela formacion<span class="caret"></span></a>
+									<li><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Escuela formacion<span class="caret"></span></a>
 									
 										<ul class="dropdown-menu">
 											<li><a class="hvr-bounce-to-bottom" href="icons.html">Categorias chupeta 10 y 11 años</a></li>
@@ -96,9 +96,9 @@ $this->registerJs($icon);
 											<li><a class="hvr-bounce-to-bottom" href="typography.html">Matriculas                </a></li>         
 										</ul>
 									</li>					
-									<li><a href="gallery.html">Galeria</a></li>
-								<!--	<li><a href="blog.html">Blog</a></li> -->
-									<li><a href="contact.html">Contactenos</a></li>
+									<li><a href="<?=Url::to(['site/galeria']); ?>">Galeria</a></li>
+							
+									<li><a href="<?=Url::to(['site/contact']); ?>">Contactenos</a></li>
 									<li><a   href="<?=Yii::$app->urlManagerBackEnd->createUrl('index.php') ?>" target="_blank"  >Login</a><span> </span></li>
 								</ul>	
 								<div class="clearfix"> </div>
@@ -143,32 +143,34 @@ $this->registerJs($icon);
 					</div>
 				</div>
 				<div class="col-md-4 footer-left">
-					<h4>Navigation</h4>
+					<h4>Navegacion</h4>
 					<div class="col-md-6 footer-grid-left">
 						<ul>
-							<li><a class="active" href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>								
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="icons.html">Icons</a></li>
+							
+							<li><a class="active" href="<?=Url::to(['site/index']); ?>">Inicio</a></li>
+									<li><a href="<?=Url::to(['site/conocenos']); ?>">Quienes somos</a></li>
+									
+									<li><a href="<?=Url::to(['site/convenios']); ?>">Convenios</a></li>
+									<li><a href="<?=Url::to(['site/galeria']); ?>">Galeria</a></li>
+							
+							<li><a href="<?=Url::to(['site/contact']); ?>">Contactenos</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 footer-grid-left">
 						<ul>
-							<li><a href="typography.html">Typography</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+						<li><a   href="<?=Yii::$app->urlManagerBackEnd->createUrl('index.php') ?>" target="_blank"  >Login</a><span> </span></li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-4 footer-left">
-					<h4>Newsletter</h4>
+			<!--		<h4>Newsletter</h4>
 					<p>Subscribe With Us</p>
 					<form action="#" method="post">
 						<input type="email" placeholder="Subscribe" name="Subscribe" required="">
 						<button class="btn1">Go</button>
 					</form>
-				</div>
+				</div> -->
 				<div class="clearfix"> </div>
 			</div>
 		</div>

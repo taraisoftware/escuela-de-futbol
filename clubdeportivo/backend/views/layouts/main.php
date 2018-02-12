@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode('club deportivo') ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -29,15 +29,17 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Club deportivo',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Noticias', 'url' => ['/noticias/index']],
+        ['label' => 'Banner', 'url' => ['/banners/index']],
+        ['label' => 'Galeria', 'url' => ['/galerias/index']],
         ['label' => 'Usuarios', 'url' => ['/user/index']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -46,7 +48,7 @@ AppAsset::register($this);
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                'Salir (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()

@@ -5,17 +5,17 @@ use yii\widgets\DetailView;
 use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\tablenoticias */
+/* @var $model app\models\tablegalerias */
 
-$this->title = $model->titulo;
-$this->params['breadcrumbs'][] = ['label' => 'noticias', 'url' => ['index']];
+$this->title = $model->imagen;
+$this->params['breadcrumbs'][] = ['label' => 'galeria', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tablenoticias-view">
+<div class="tablegalerias-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= 'noticia'.' '. Html::encode($this->title) ?></h2>
+            <h2><?= 'imagen: '.' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => 'estas seguro?',
+                    'confirm' => 'Are you sure you want to delete this item?',
                     'method' => 'post',
                 ],
             ])
@@ -35,11 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
-        'titulo',
-       
         'imagen',
-        'descripcion',
-        'detalles:ntext',
     ];
     echo DetailView::widget([
         'model' => $model,

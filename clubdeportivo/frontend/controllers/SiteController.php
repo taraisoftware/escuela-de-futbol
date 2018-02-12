@@ -83,6 +83,19 @@ class SiteController extends Controller
     {
         return $this->render('convenios');
     }
+    public function actionGaleria()
+    {
+        return $this->render('galeria');
+    }
+      public function actionNoticias()
+    {
+        return $this->render('noticias');
+    }
+    public function actionNoticia($id)
+    {
+
+        return $this->render('noticia',['id'=> $_GET['id']]);
+    }
     /**
      * Logs in a user.
      *

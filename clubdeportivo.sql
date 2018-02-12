@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2018 a las 21:44:46
+-- Tiempo de generación: 12-02-2018 a las 07:55:59
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -44,6 +44,40 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `table_banners`
+--
+
+CREATE TABLE `table_banners` (
+  `id` int(11) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_at` date NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  `deleted_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `table_galerias`
+--
+
+CREATE TABLE `table_galerias` (
+  `id` int(11) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_at` date NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  `deleted_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `table_noticias`
 --
 
@@ -51,6 +85,7 @@ CREATE TABLE `table_noticias` (
   `id` int(11) NOT NULL,
   `titulo` varchar(200) NOT NULL,
   `imagen` varchar(200) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
   `detalles` text NOT NULL,
   `created_by` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
@@ -59,13 +94,6 @@ CREATE TABLE `table_noticias` (
   `deleted_by` int(11) NOT NULL,
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `table_noticias`
---
-
-INSERT INTO `table_noticias` (`id`, `titulo`, `imagen`, `detalles`, `created_by`, `created_at`, `updated_by`, `updated_at`, `deleted_by`, `deleted_at`) VALUES
-(889930, 'prueba', 'images-noticias/ba-XcH361i5Lpvd2nBi2.jpg', 'pruebaaaaa', 4, '2018-02-11 15:09:58', 4, '2018-02-11 15:09:58', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -103,6 +131,18 @@ ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
+-- Indices de la tabla `table_banners`
+--
+ALTER TABLE `table_banners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `table_galerias`
+--
+ALTER TABLE `table_galerias`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `table_noticias`
 --
 ALTER TABLE `table_noticias`
@@ -122,10 +162,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `table_banners`
+--
+ALTER TABLE `table_banners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259400004;
+
+--
+-- AUTO_INCREMENT de la tabla `table_galerias`
+--
+ALTER TABLE `table_galerias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=818179145;
+
+--
 -- AUTO_INCREMENT de la tabla `table_noticias`
 --
 ALTER TABLE `table_noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=889931;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=889932;
 
 --
 -- AUTO_INCREMENT de la tabla `user`

@@ -3,12 +3,12 @@
 namespace backend\models;
 
 use Yii;
-use \backend\models\base\tablenoticias as Basetablenoticias;
+use \backend\models\base\tablebanners as Basetablebanners;
 
 /**
- * This is the model class for table "table_noticias".
+ * This is the model class for table "table_banners".
  */
-class tablenoticias extends Basetablenoticias
+class tablebanners extends Basetablebanners
 {
     /**
      * @inheritdoc
@@ -17,11 +17,10 @@ class tablenoticias extends Basetablenoticias
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['titulo', 'imagen', 'detalles',], 'required'],
-            [['detalles'], 'string'],
+            [['imagen', ], 'required'],
             [['created_by', 'updated_by', 'deleted_by'], 'integer'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
-            [['titulo', 'imagen','descripcion'], 'string', 'max' => 200]
+            [['imagen'], 'string', 'max' => 200]
         ]);
     }
 	

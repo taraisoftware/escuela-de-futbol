@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\tablenoticias;
+use backend\models\tablebanners;
 
 /**
- * app\models\tablenoticiasSearch represents the model behind the search form about `app\models\tablenoticias`.
+ * app\models\tablebannersSearch represents the model behind the search form about `app\models\tablebanners`.
  */
- class tablenoticiasSearch extends tablenoticias
+ class tablebannersSearch extends tablebanners
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ use backend\models\tablenoticias;
     {
         return [
             [['id', 'created_by', 'updated_by', 'deleted_by'], 'integer'],
-            [['titulo', 'imagen', 'detalles', 'created_at', 'updated_at', 'deleted_at','descripcion'], 'safe'],
+            [['imagen', 'created_at', 'updated_at', 'deleted_at'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ use backend\models\tablenoticias;
      */
     public function search($params)
     {
-        $query = tablenoticias::find();
+        $query = tablebanners::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -65,10 +65,7 @@ use backend\models\tablenoticias;
             'deleted_at' => $this->deleted_at,
         ]);
 
-        $query->andFilterWhere(['like', 'titulo', $this->titulo])
-            ->andFilterWhere(['like', 'imagen', $this->imagen])
-            ->andFilterWhere(['like', 'detalles', $this->detalles])
-            ->andFilterWhere(['like', 'descripcion', $this->descripcion]);
+        $query->andFilterWhere(['like', 'imagen', $this->imagen]);
 
         return $dataProvider;
     }
